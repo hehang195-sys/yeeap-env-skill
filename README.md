@@ -22,13 +22,30 @@
 npx -y skills add "hehang195-sys/yeeap-env-skill" --agent '*' -g -y
 ```
 
-安装后在对话中说：**使用技能 `yeeap-env`**。执行 test 时请批准 **完整网络（Full network access）**。
+安装器会自动：
+
+1. 安装技能文件
+2. 通过 `permissions.install` 安装 **`yeeap-cli@0.2.4`**
+3. 自动配置 **Cursor Hook**（无需再跑 `setup-hooks`）
+
+**首次安装后必须完全退出并重启 Cursor 一次**（终端会打印 `═` 边框提示；未重启时 `yeeap-cli test` 会返回 `cursorRestartRequired: true`）。重启后新开对话即可。
+
+安装后在对话中说：**使用技能 `yeeap-env`**。执行 test 时请批准 **完整网络**。
 
 ### 核心命令
 
+必须使用 **npm 官方源**（公司镜像可能只有 `0.1.0`，没有 `test`）：
+
 ```bash
+TMPDIR="$(mktemp -d)"
+NPM_CONFIG_USERCONFIG="/dev/null" \
+NPM_CONFIG_REGISTRY="https://registry.npmjs.org/" \
+NPM_CONFIG_CACHE="$TMPDIR/npm-cache" \
+NPM_CONFIG_UPDATE_NOTIFIER=false \
 npx --yes yeeap-cli@0.2.2 test
 ```
+
+若报 `ETARGET` / `No matching version for yeeap-cli@0.2.2`：说明当前 npm 源未同步，请用上面命令（不要用 `0.1.0`）。
 
 ### 核心文件
 

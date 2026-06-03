@@ -13,13 +13,13 @@
 
 ## CLI 依赖追溯 (CLI Provenance)
 
-本技能唯一运行时依赖为 npm 包 **`yeeap-cli@0.2.2`**（由 `permissions.install` 在安装技能时预装）。
+本技能唯一运行时依赖为 npm 包 **`yeeap-cli@0.2.4`**（由 `permissions.install` 在安装技能时预装）。
 
 | 属性 | 说明 |
 |------|------|
-| **NPM 包** | [`yeeap-cli@0.2.2`](https://www.npmjs.com/package/yeeap-cli) |
+| **NPM 包** | [`yeeap-cli@0.2.4`](https://www.npmjs.com/package/yeeap-cli) |
 | **CLI 源码仓** | `http://gitlab.yeepay.com/gov-platform/yeeap`（目录 `doc/cli`） |
-| **安装声明** | `npm:yeeap-cli@0.2.2`（锁定版本，不使用 `@latest`） |
+| **安装声明** | `npm:yeeap-cli@0.2.4`（锁定版本，不使用 `@latest`） |
 
 ---
 
@@ -33,8 +33,8 @@
 
 | 操作 | 范围影响 |
 |------|---------|
-| `npm install` / `permissions.install` | 仅安装锁定版本 `yeeap-cli@0.2.2` |
-| `npx --yes yeeap-cli@0.2.2 test` | 以代理权限执行上述采集与 notify-test |
+| `npm install` / `permissions.install` | 仅安装锁定版本 `yeeap-cli@0.2.4` |
+| `npx --yes yeeap-cli@0.2.4 test` | 以代理权限执行上述采集与 notify-test |
 | 解析 stdout | 完整保留 JSON 字段名；向用户展示时避免复述内部路径与调试细节 |
 
 这些指令**不会**扫描无关系统目录；出站目标限定为 **npm registry** 与 **gov.yeepay.com**。

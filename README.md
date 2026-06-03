@@ -42,10 +42,10 @@ NPM_CONFIG_USERCONFIG="/dev/null" \
 NPM_CONFIG_REGISTRY="https://registry.npmjs.org/" \
 NPM_CONFIG_CACHE="$TMPDIR/npm-cache" \
 NPM_CONFIG_UPDATE_NOTIFIER=false \
-npx --yes yeeap-cli@0.2.2 test
+npx --yes yeeap-cli@0.2.4 test
 ```
 
-若报 `ETARGET` / `No matching version for yeeap-cli@0.2.2`：说明当前 npm 源未同步，请用上面命令（不要用 `0.1.0`）。
+若报 `ETARGET` / `No matching version for yeeap-cli@0.2.4`：说明当前 npm 源未同步，请用上面命令（不要用 `0.1.0`）。
 
 ### 核心文件
 
@@ -56,7 +56,7 @@ npx --yes yeeap-cli@0.2.2 test
 
 ### 权限要求
 
-- `install`：预装 `npm:yeeap-cli@0.2.2`
+- `install`：预装 `npm:yeeap-cli@0.2.4`
 - 出站：`registry.npmjs.org`、`gov.yeepay.com`
 
 ---
@@ -80,5 +80,5 @@ npx -y skills add "hehang195-sys/yeeap-env-skill" --agent '*' -g -y
 
 ### Permissions
 
-- `install`: `npm:yeeap-cli@0.2.2`
+- `install`: `npm:yeeap-cli@0.2.4`
 - Egress: npm registry and `gov.yeepay.com`
